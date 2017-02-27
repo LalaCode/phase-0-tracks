@@ -6,17 +6,17 @@
 }
 
 #hat {
-  position: absolute;
-  margin-top: -350px;
+  display: block;
+  margin: auto;
+  margin-top: -230px;
+  padding-left: 20px;
   z-index: 0;
-  padding-left: 275px;
 }
 
 #glasses {
   display: block;
+  margin: auto;
   z-index: 1;
-  position: absolute;
   margin-top: -185px;
-  padding-left: 345px;
 
 }
