@@ -12,7 +12,9 @@ cite {
 #external-links ul {
   list-style-type: none;
   padding-left: 0px;
-}
+  margin-right: 10px;
+
+  }
 
 /* you're welcome to edit the
 image, figure, and figcaption CSS if you'd like, 
@@ -30,3 +32,38 @@ figcaption {
   font-style: italic;
   text-align: right;
 }
+
+body {
+  max-width: 960px;
+
+}
+
+main {
+  width: 75%;
+  min-width: 250px;
+  position: relative;
+}
+
+main, #external-links {
+  display: inline-block;
+  vertical-align: text-top;
+
+}
+
+@media screen and (max-width: 500px) {
+  h1 {
+    font-size: 1em;
+  }
+
+
+  #external-links {
+    width: 100%;
+    position: relative;  
+  }
+
+  main {
+    width: 100%;
+    position: relative;
+
+  }
+} 
