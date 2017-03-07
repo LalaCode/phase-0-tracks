@@ -1,0 +1,45 @@
+Elevator algorithm
+- upon initiation
+	- move forward (obstacle avoid) until distance to elevator = 25 cm
+	- if going out
+		- press 0
+	- if going home 
+		- press 1
+	- if else
+		- request remote input for floor choice
+- when doors open 
+	- wait 2 seconds for passengers to exit
+	- move forward .5m and say “excuse me, pardon me”
+	- turn 180 degrees
+	- if there are people inside
+		- say “good day”
+- when doors open
+	- wait 2 seconds for passengers to exit
+	- move forward .5m
+-end
+
+
+
+Answering the door algorithm 
+- when door alarm rings
+	- advance towards phone left of door
+	- pick up phone 
+	- Say, “Hallo, wer ist da?”
+	- wait 2 seconds
+		- if no answer
+		- Say, “Hallo, wer ist da?”
+		- wait 2 seconds 
+			- if no answer
+				- hang up
+				- return to original location
+			- if answer = good person
+				- press door release button
+				- wait for guest arrival
+				- open door
+			- if answer = bad person
+				- say “Nein, danke!”
+				- hang up
+				- return to original position
+- end
+		
+	
