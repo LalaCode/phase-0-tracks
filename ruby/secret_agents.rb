@@ -20,7 +20,8 @@ letter_count = 0
   end
 end 
 
-p encrypt("world")
+
+
 
 #Decrypt
 
@@ -32,10 +33,8 @@ def decrypt(password)
   while letter_count < password.length
     letter = password[letter_count]
     number = alpha.index("#{letter}")
-    p alpha[number.to_i-1]
+    print alpha[number.to_i-1]
     letter_count +=1
   end 
 end 
-
-p decrypt("lauren")
 
