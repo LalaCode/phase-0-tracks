@@ -31,15 +31,14 @@ if birth_confirmation == true && (garlic_bread == "y" || health_insurance == "y"
 
 elsif birth_confirmation == false && (garlic_bread == "n" || health_insurance == "n")
   vampire_result = "Probably a vampire"
-
-elsif birth_confirmation == false && (garlic_bread == "n" && health_insurance == "n")
-  vampire_result = "Almost certainly a vampire"
-
-elsif name == "Drake Cula" || "Tu Fang"
-  vampire_result = "Definitely a vampire"
-  
 else
   vampire_result = "Results inconclusive"
+end
+
+if birth_confirmation == false && garlic_bread == "n" && health_insurance == "n"
+  vampire_result = "Almost certainly a vampire"
+elsif name == "Drake Cula" || "Tu Fang"
+  vampire_result = "Definitely a vampire"
 end 
 
 
