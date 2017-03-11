@@ -1,0 +1,45 @@
+header{
+  width: 96%;
+  text-align: center;
+  border: 2px solid black;
+  background: lightgreen;
+
+}
+.column-1{
+  width: 45%;
+  display: inline-block;
+  margin: 0px;
+  vertical-align: text-top;
+  padding: 1.25%;
+  max-height: 60vh;
+  border: 2px solid black;
+  overflow: scroll;
+  
+ 
+  
+}
+
+.column-2{
+  width: 45%;
+  display: inline-block;
+  margin: 0px;
+  vertical-align: text-top;
+  padding: 1.25%;
+  max-height: 60vh;
+  border: 2px solid black;
+  overflow: scroll; 
+ 
+}
+
+footer{
+  width: 96%;
+  text-align: center;
+  border: 2px solid black;
+  background: lightgreen;
+}
+
+h2 {
+  font-family: Georgia;
+  color: darkgreen; 
+}
+
