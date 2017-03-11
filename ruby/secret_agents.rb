@@ -1,12 +1,4 @@
 
-
-# -While letter count is less than the password length
-    #-use letter count to indicate index position of letters in password.
-    #-call next method on indicated letter.
-    #-print result.
-    #-advance letter count by one
-#- print the password
-
 # METHOD DECLARATIONS
 
 #encrypts a password
@@ -18,15 +10,16 @@ alpha = "abcdefghijklmnopqrstuvwxyz"
 
 # loops over the password letters until all letters have been accounted for 
  while letter_count < password.length
-    # deletes 
+    # manage end case scenario 
      if password[letter_count] == "z"
       password[letter_count] = password[letter_count].replace "a"
-        
+
+     #replace current letter with the letter following it in the alphabet    
     else
         password[letter_count] = password[letter_count].replace password[letter_count].next
 
     end
-
+    # advance letter count by one
    letter_count +=1
 
 
@@ -37,33 +30,25 @@ alpha = "abcdefghijklmnopqrstuvwxyz"
 end
 
 
-
-
-#Decrypt
-# -define decrypt with a single argument
-# -Set letter count to zero
-# -Set alpha variable to alphabet
-# -While letter count is less than the password length
-  # set variable letter equal to the indexed letter of the password
-  # set variable number equal to the index number of the selected letter
-  # replace and store the selected letter with the letter before it in the variable
-  # increase letter count by one
-# print password
-
+#decryptps a password
 def decrypt(password)
 
   alpha = "abcdefghijklmnopqrstuvwxyz"
   letter_count = 0 
 
+# loops over the password letters until all letters have been accounted for 
   while letter_count < password.length  
-  
+    # identify current letter
     letter = password[letter_count]
+    # identify index number of current letter
     number = alpha.index("#{letter}")
+     #replace current letter with the letter preceding it in the alphabet    
     password[letter_count] = password[letter_count].replace alpha[number.to_i-1]
+     # advance letter count by one
     letter_count +=1
   end 
   p password
 end 
 
-decrypt(encrypt("abc"))
+decrypt(encrypt("rio"))
 
