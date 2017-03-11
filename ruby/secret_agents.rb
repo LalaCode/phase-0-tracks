@@ -20,12 +20,16 @@ alpha = "abcdefghijklmnopqrstuvwxyz"
      if password[letter_count].next.include? "aa"
         p alpha[0]
     else
-        print password[letter_count].next
+        password[letter_count] = password[letter_count].replace password[letter_count].next
+
     end
 
    letter_count +=1
-    
+
+
   end
+       p password
+
 
 end
 
@@ -34,14 +38,14 @@ end
 
 #Decrypt
 
-def decrypt(password_fix)
+def decrypt(password)
 
   alpha = "abcdefghijklmnopqrstuvwxyz"
   letter_count = 0 
 
-  while letter_count < password_fix.length  
+  while letter_count < password.length  
   
-    letter = password_fix[letter_count]
+    letter = password[letter_count]
     number = alpha.index("#{letter}")
     print alpha[number.to_i-1]
     letter_count +=1
