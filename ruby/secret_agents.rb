@@ -1,8 +1,5 @@
-#Encrypt
 
-# -define encrypt with a single argument
-# -Set letter count to zero
-# -Set alpha variable to alphabet
+
 # -While letter count is less than the password length
     #-use letter count to indicate index position of letters in password.
     #-call next method on indicated letter.
@@ -10,17 +7,21 @@
     #-advance letter count by one
 #- print the password
 
+# METHOD DECLARATIONS
+
+#encrypts a password
 def encrypt(password)
   
   
 letter_count = 0
 alpha = "abcdefghijklmnopqrstuvwxyz"
 
-
+# loops over the password letters until all letters have been accounted for 
  while letter_count < password.length
-
-     if password[letter_count].next.include? "aa"
-        p alpha[0]
+    # deletes 
+     if password[letter_count] == "z"
+      password[letter_count] = password[letter_count].replace "a"
+        
     else
         password[letter_count] = password[letter_count].replace password[letter_count].next
 
@@ -64,5 +65,5 @@ def decrypt(password)
   p password
 end 
 
-decrypt(encrypt("lauren"))
+decrypt(encrypt("abc"))
 
