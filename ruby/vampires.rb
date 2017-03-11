@@ -26,22 +26,23 @@ end
 
 # Vampire detection
 
-if birth_confirmation == true && (garlic_bread == "y" || health_insurance == "y")
-  vampire_result = "Probably not a vampire"
 
-elsif birth_confirmation == false && (garlic_bread == "n" || health_insurance == "n")
-  vampire_result = "Probably a vampire"
+if (birth_confirmation == true && garlic_bread == "y")||(birth_confirmation == true && health_insurance == "y")
+   vampire_result = "Probably not a vampire"
+
+elsif (birth_confirmation == false && garlic_bread == "n")||(birth_confirmation == false && health_insurance == "n")
+  vampire_result =  "Probably a vampire"
+
+elsif (birth_confirmation == false && garlic_bread == "n")&&(birth_confirmation == false && health_insurance == "n")
+  vampire_result =  "Almost certainly a vampire" 
+
+elsif (name == "Drake Cula")||(name == "Tu Fang")
+  vampire_result =  "Definitely a vampire"
 else
-  vampire_result = "Results inconclusive"
-end
-
-if birth_confirmation == false && garlic_bread == "n" && health_insurance == "n"
-  vampire_result = "Almost certainly a vampire"
-elsif name == "Drake Cula" || "Tu Fang"
-  vampire_result = "Definitely a vampire"
+ vampire_result =  "Results inconclusive"
 end 
 
+print vampire_result  
 
-p vampire_result
     
     
