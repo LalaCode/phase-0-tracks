@@ -24,7 +24,7 @@ alpha = "abcdefghijklmnopqrstuvwxyz"
 
 
   end
-       p password
+       p "ENCRYPTED PASSWORD: #{password}"
 
 
 end
@@ -47,8 +47,36 @@ def decrypt(password)
      # advance letter count by one
     letter_count +=1
   end 
-  p password
+  p "DECRYPTED PASSWORD: #{password}"
 end 
 
-decrypt(encrypt("rio"))
+
+#DRIVER CODE
+
+#ask for encryption or decryption
+p "Greetings, would you like to encrypt or decrypt your password?"
+p "Type: encrypt or decrypt"
+operation = gets.chomp
+ 
+#confirm operation availability 
+until operation == "encrypt" || operation == "decrypt" 
+  p "That is not a valid option."
+  p "Please type: encrypt or decrypt"
+  operation = gets.chomp 
+end 
+
+#ask for password
+p "What is your password?"
+password = gets.chomp
+
+#run operation
+if operation == "encrypt"
+  encrypt(password)
+elsif operation == "decrypt"
+  decrypt(password)
+end
+    
+
+#NESTED METHOD DRIVER DEMO
+#decrypt(encrypt("rio"))
 
