@@ -47,10 +47,11 @@ def decrypt(password)
   
     letter = password[letter_count]
     number = alpha.index("#{letter}")
-    print alpha[number.to_i-1]
+    password[letter_count] = password[letter_count].replace alpha[number.to_i-1]
     letter_count +=1
   end 
+  p password
 end 
 
-decrypt(encrypt("swordfish"))
+decrypt(encrypt("lauren"))
 
