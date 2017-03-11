@@ -2,11 +2,13 @@
 
 # -define encrypt with a single argument
 # -Set letter count to zero
+# -Set alpha variable to alphabet
 # -While letter count is less than the password length
     #-use letter count to indicate index position of letters in password.
     #-call next method on indicated letter.
     #-print result.
-    #-advance letter count by one.
+    #-advance letter count by one
+#- print the password
 
 def encrypt(password)
   
@@ -37,6 +39,15 @@ end
 
 
 #Decrypt
+# -define decrypt with a single argument
+# -Set letter count to zero
+# -Set alpha variable to alphabet
+# -While letter count is less than the password length
+  # set variable letter equal to the indexed letter of the password
+  # set variable number equal to the index number of the selected letter
+  # replace and store the selected letter with the letter before it in the variable
+  # increase letter count by one
+# print password
 
 def decrypt(password)
 
