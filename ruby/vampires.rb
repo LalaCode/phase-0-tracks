@@ -1,4 +1,10 @@
+# Multiple Employee process
+p "How many users will be processed today?"
+users = gets.chomp.to_i
+
 # Vampire Questionnaire 
+count = 0
+until count == users 
 
 p "Hello, there.  What is your name?"
 name = gets.chomp
@@ -26,34 +32,33 @@ end
 
 # Vampire detection
 
-inconclusive = " "
+vampire_result = nil
 
 if (birth_confirmation == true && garlic_bread == "y")||(birth_confirmation == true && health_insurance == "y")
    vampire_result = "Probably not a vampire"
- else vampire_result = inconclusive
 end 
 
 if (birth_confirmation == false && garlic_bread == "n")||(birth_confirmation == false && health_insurance == "n")
   vampire_result =  "Probably a vampire"
-  else vampire_result = inconclusive
 end 
 
 if (birth_confirmation == false && garlic_bread == "n")&&(birth_confirmation == false && health_insurance == "n")
   vampire_result =  "Almost certainly a vampire" 
-  else vampire_result = inconclusive
 end 
 
 if (name == "Drake Cula")||(name == "Tu Fang")
   vampire_result =  "Definitely a vampire"
-  else vampire_result = inconclusive
 end 
 
-if vampire_result = inconclusive
+if vampire_result == nil  
   vampire_result = "Results inconclusive"
 end
 
+count +=1
 
-print vampire_result  
+p vampire_result  
+p "Thank you for completing the survey"
+end 
 
     
     
