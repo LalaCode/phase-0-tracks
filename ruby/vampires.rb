@@ -74,8 +74,10 @@ count +=1
 
 p vampire_result  
 p "Thank you for completing the survey"
-p "--------- NEXT USER ---------"
+p "------------------"
 end 
+
+p "Actually, never mind! What do these questions have to do with anything? Let's all be friends."
 
     
     
