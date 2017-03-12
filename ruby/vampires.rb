@@ -1,4 +1,10 @@
+# Multiple Employee process
+p "How many users will be processed today?"
+users = gets.chomp.to_i
+
 # Vampire Questionnaire 
+count = 0
+until count == users 
 
 p "Hello, there.  What is your name?"
 name = gets.chomp
@@ -16,6 +22,22 @@ garlic_bread = gets.chomp
 p "Would you like to enroll in the company’s health insurance? (y/n)"
 health_insurance = gets.chomp
 
+#ALLERGY CHECK
+allergies = nil
+
+p "Please type in your allergies, one at a time. Type 'done' when you have listed all allergies."
+allergies = gets.chomp
+
+until allergies == "sunshine" || allergies == "done"
+p "Next allergy"
+allergies = gets.chomp
+end 
+
+if allergies == "sunshine"
+  vampire_result = "Probably a vampire"
+end
+    
+
 # Birth Confirmation
 
 if 2017-age.to_i == birth_year.to_i || 2017-age.to_i == birth_year.to_i+1
@@ -26,23 +48,36 @@ end
 
 # Vampire detection
 
-
 if (birth_confirmation == true && garlic_bread == "y")||(birth_confirmation == true && health_insurance == "y")
    vampire_result = "Probably not a vampire"
-
-elsif (birth_confirmation == false && garlic_bread == "n")||(birth_confirmation == false && health_insurance == "n")
-  vampire_result =  "Probably a vampire"
-
-elsif (birth_confirmation == false && garlic_bread == "n")&&(birth_confirmation == false && health_insurance == "n")
-  vampire_result =  "Almost certainly a vampire" 
-
-elsif (name == "Drake Cula")||(name == "Tu Fang")
-  vampire_result =  "Definitely a vampire"
-else
- vampire_result =  "Results inconclusive"
 end 
 
-print vampire_result  
+if (birth_confirmation == false && garlic_bread == "n")||(birth_confirmation == false && health_insurance == "n")
+  vampire_result =  "Probably a vampire"
+end 
+
+if (birth_confirmation == false && garlic_bread == "n")&&(birth_confirmation == false && health_insurance == "n")
+  vampire_result =  "Almost certainly a vampire" 
+end 
+
+if (name == "Drake Cula")||(name == "Tu Fang")
+  vampire_result =  "Definitely a vampire"
+end 
+
+if vampire_result == nil  
+  vampire_result = "Results inconclusive"
+end
+
+
+
+count +=1
+
+p vampire_result  
+p "Thank you for completing the survey"
+p "------------------"
+end 
+
+p "Actually, never mind! What do these questions have to do with anything? Let's all be friends."
 
     
     
