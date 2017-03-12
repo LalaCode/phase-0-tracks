@@ -22,6 +22,22 @@ garlic_bread = gets.chomp
 p "Would you like to enroll in the company’s health insurance? (y/n)"
 health_insurance = gets.chomp
 
+#ALLERGY CHECK
+allergies = nil
+
+p "Please type in your allergies, one at a time. Type 'done' when you have listed all allergies."
+allergies = gets.chomp
+
+until allergies == "sunshine" || allergies == "done"
+p "Next allergy"
+allergies = gets.chomp
+end 
+
+if allergies == "sunshine"
+  vampire_result = "Probably a vampire"
+end
+    
+
 # Birth Confirmation
 
 if 2017-age.to_i == birth_year.to_i || 2017-age.to_i == birth_year.to_i+1
@@ -31,8 +47,6 @@ else
 end
 
 # Vampire detection
-
-vampire_result = nil
 
 if (birth_confirmation == true && garlic_bread == "y")||(birth_confirmation == true && health_insurance == "y")
    vampire_result = "Probably not a vampire"
@@ -54,10 +68,13 @@ if vampire_result == nil
   vampire_result = "Results inconclusive"
 end
 
+
+
 count +=1
 
 p vampire_result  
 p "Thank you for completing the survey"
+p "--------- NEXT USER ---------"
 end 
 
     
