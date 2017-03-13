@@ -4,22 +4,28 @@
 # When there's more than one suspect who could have
 # committed the crime, add additional calls to prove it.
 
-# "iNvEsTiGaTiOn".<???>
+"iNvEsTiGaTiOn".swapcase
+"iNvEsTiGaTiOn".swapcase!
 # => “InVeStIgAtIoN”
 
-# "zom".<???>
+"zom".insert(1, 'o')
+"zom".replace "zoom"
 # => “zoom”
 
-# "enhance".<???>
+"enhance".center(15)
+"enhance".replace "    enhance    "
 # => "    enhance    "
 
-# "Stop! You’re under arrest!".<???>
+"Stop! You’re under arrest!".upcase
+"Stop! You’re under arrest!".upcase!
 # => "STOP! YOU’RE UNDER ARREST!"
 
-# "the usual".<???>
+"the usual" << " suspects"
+"the usual".replace "the usual suspects"
 #=> "the usual suspects"
 
-# " suspects".<???>
+" suspects".prepend("the usual")
+" suspects".replace "the usual suspects"
 # => "the usual suspects"
 
 # "The case of the disappearing last letter".<???>
