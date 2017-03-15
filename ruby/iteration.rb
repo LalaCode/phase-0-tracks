@@ -45,14 +45,38 @@ numbers.each do
   end
 end 
 
-p numbers
+#p numbers
 
 
 
 
+the_numbers = {1 => "A", 2 => "B", 3 => "C", 4 => "D", 5 => "E"}
+
+the_numbers.delete_if {|number, letter| number.even?}
+  # p the_numbers
 
 
 
+the_numbers.each do |number, letter|
+  if number < 3
+    # p letter
+ end
+end
 
-# the_numbers = {1 => "A", 2 => "B", 3 => "C", 4 => "D"}
+the_numbers.each do |number, letter|
+  while number <= 3
+    # p letter
+    number +=1
+  end
+end
+
+the_numbers.each do |number, letter|
+  if number.even?
+  the_numbers.delete(number)
+end
+  end
+ 
+ # p the_numbers
+
+
 
