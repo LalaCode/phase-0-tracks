@@ -25,4 +25,12 @@ def spy_name(name)
     p name
 end
 
-spy_name("Lauren Rodrigues")
+#User interface
+input = ""
+puts "Please enter a name into the Spy Name Generator? Or type 'quit' to exit"
+
+while input = gets.chomp do
+    break if input == 'quit'
+    spy_name(input)
+    puts "Please enter a name into the Spy Name Generator? Or type 'quit' to exit"
+  end
