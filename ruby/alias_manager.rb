@@ -23,11 +23,12 @@ name.each do |letter|
   vowel.each do |vowel|
     if letter == vowel
       next_vowel(vowel)
-# get the index of this matched letter, add one to it and store the new letter      
+# store the new letter      
     end
   end
 end
 
+p name
 
   
     
