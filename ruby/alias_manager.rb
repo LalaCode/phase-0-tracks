@@ -1,11 +1,25 @@
+
 def next_vowel(letter)
     vowel = ["a", "e", "i", "o", "u"]
     next_index = vowel.index(letter) + 1
     if vowel[next_index] == nil 
-      p vowel[0]
+      letter = vowel[0]
     else
-      p vowel[next_index]
+      letter = vowel[next_index]
     end
+    print letter
+  end
+
+
+def next_consonant(letter)
+    consonant = ["b", "c", "d", "f", "g", "h", "j", "k", "l", "m", "n", "p", "q", "r", "s", "t", "v", "w", "x", "y", "z"]
+    next_index = consonant.index(letter) + 1
+    if consonant[next_index] == nil 
+      letter = consonant[0]
+    else
+      letter = consonant[next_index]
+    end
+    print letter
   end
 
 #swap first and last name
@@ -18,17 +32,28 @@ vowel = ["a", "e", "i", "o", "u"]
 consonant = ["b", "c", "d", "f", "g", "h", "j", "k", "l", "m", "n", "p", "q", "r", "s", "t", "v", "w", "x", "y", "z"]
 name = name.split('')
 # p name
-index_count = 0
+
 name.each do |letter|
   vowel.each do |vowel|
     if letter == vowel
       next_vowel(vowel)
-# store the new letter      
     end
   end
 end
 
-p name
+name.each do |letter|
+  consonant.each do |consonant|
+    if letter == consonant
+      next_consonant(consonant)
+    end    
+  end
+end
+
+
+
+
+
+
 
   
     
