@@ -26,11 +26,17 @@ def spy_name(name)
 end
 
 #User interface
-input = ""
 puts "Please enter a name into the Spy Name Generator? Or type 'quit' to exit"
 
+#continues adding real name:new name combos to the spy roster until user types quit
 while input = gets.chomp do
-    break if input == 'quit'
-    spy_name(input)
-    puts "Please enter a name into the Spy Name Generator? Or type 'quit' to exit"
+    break if input == "quit"
+
+    spy_roster = {
+        real_name: input,
+        new_name: spy_name(input)
+    }
+    names.push(spy_roster)
   end
+
+    # print names
