@@ -22,8 +22,12 @@ def spy_name(name)
         real_name = real_name.join
     end
     name = name.join(' ')
-    p name
+    # puts name
 end
+
+
+names = []
+input = ""
 
 #User interface
 puts "Please enter a name into the Spy Name Generator? Or type 'quit' to exit"
@@ -40,3 +44,11 @@ while input = gets.chomp do
   end
 
     # print names
+
+#Print out the roster in user friendly format
+names.each do |name|
+    puts "#{name[:real_name]} is also known as #{name[:new_name]}."
+end
+
+
+
