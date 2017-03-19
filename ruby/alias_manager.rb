@@ -1,59 +1,28 @@
+def spy_name(name)
+    #Put real name into lowercase then split and switch first and last name position
+    name = name.downcase.split.rotate
 
-def next_vowel(letter)
-    vowel = ["a", "e", "i", "o", "u"]
-    next_index = vowel.index(letter) + 1
-    if vowel[next_index] == nil 
-      letter = vowel[0]
-    else
-      letter = vowel[next_index]
+    #Cycles through the last and first name and shifts the letters
+    name.map! do |real_name|
+        #Separate then shift the vowels to create new vowel list for translation
+        vowels = "aeiou"
+        new_vowels = vowels.split('').rotate.join
+        #Separate then shift the consonants to create new consonant list for translation
+        consonants = "bcdfghjklmnpqrstvwxyz"
+        new_consonants = consonants.split('').rotate.join
+
+
+        #Translate original vowels and consonants to new vowels and consonants
+        real_name.tr!(vowels, new_vowels)
+        real_name.tr!(consonants, new_consonants)
+        
+        #Capitalize first letter in first and last name
+        real_name = real_name.split('')
+        real_name[0] = real_name[0].upcase
+        real_name = real_name.join
     end
-    print letter
-  end
-
-
-def next_consonant(letter)
-    consonant = ["b", "c", "d", "f", "g", "h", "j", "k", "l", "m", "n", "p", "q", "r", "s", "t", "v", "w", "x", "y", "z"]
-    next_index = consonant.index(letter) + 1
-    if consonant[next_index] == nil 
-      letter = consonant[0]
-    else
-      letter = consonant[next_index]
-    end
-    print letter
-  end
-
-#swap first and last name
-name = "Felicia Torres"
-name = name.split(' ').reverse!.join(' ').downcase
-# p name
-
-#change vowels to next vowel
-vowel = ["a", "e", "i", "o", "u"]
-consonant = ["b", "c", "d", "f", "g", "h", "j", "k", "l", "m", "n", "p", "q", "r", "s", "t", "v", "w", "x", "y", "z"]
-name = name.split('')
-# p name
-
-name.each do |letter|
-  vowel.each do |vowel|
-    if letter == vowel
-      next_vowel(vowel)
-    end
-  end
+    name = name.join(' ')
+    p name
 end
 
-name.each do |letter|
-  consonant.each do |consonant|
-    if letter == consonant
-      next_consonant(consonant)
-    end    
-  end
-end
-
-
-
-
-
-
-
-  
-    
+spy_name("Lauren Rodrigues")
