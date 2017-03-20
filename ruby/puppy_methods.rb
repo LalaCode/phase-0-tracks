@@ -80,4 +80,10 @@ until number == 51
   number +=1
 end
 
-puts robots 
+# puts robots 
+
+robots.each do |type|
+  type = Cleaning_Robot.new
+  type.cleaning_time(rand(1..5))
+  type.floors(rand(1..5))
+end
