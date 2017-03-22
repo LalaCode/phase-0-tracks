@@ -18,22 +18,50 @@ class Santa
     puts "That was a good #{cookie} cookie!"
   end
 
+  def celebrate_birthday(age)
+    age +=1
+  end
+
+  def get_mad_at(reindeer_name)
+    @reindeer_ranking.delete(reindeer_name)
+    @reindeer_ranking[-1] = reindeer_name
+  end
+
+#SETTER METHOD
+  def gender=(new_gender)
+    @gender = new_gender
+  end
+
+  #GETTER METHODS
+
+  def age
+    @age
+  end
+
+  def ethnicity
+    @ethnicity
+  end
+
+def reindeer_ranking
+  @reindeer_ranking
 end
 
+end
 
+=begin
 santas = []
 example_genders = ["agender", "female", "bigender", "male", "female", "gender fluid", "N/A"]
 example_ethnicities = ["black", "Latino", "white", "Japanese-African", "prefer not to say", "Mystical Creature (unicorn)", "N/A"]
 example_genders.length.times do |i|
   santas << Santa.new(example_genders[i], example_ethnicities[i])
 end
+=end
 
+tabi = Santa.new("female", "Vizsla")
+p tabi.celebrate_birthday(23)
+tabi.get_mad_at("Rudolph")
 
-santas.each do |santa|
-  santa.speak
-  santa.eat_milk_and_cookies("Chocolate")
-end
-
-
+p tabi.reindeer_ranking
+p tabi.gender=("undefined")
 
 
