@@ -45,6 +45,8 @@ def create_list(groceries)
 end
 
 def add_item (grocery_list, item, quantity=1)
+  grocery_list[item] = quantity
+  p grocery_list
 end
 
 def remove_item
