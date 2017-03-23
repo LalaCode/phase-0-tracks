@@ -49,13 +49,20 @@ def add_item (grocery_list, item, quantity=1)
   p grocery_list
 end
 
-def remove_item
+def remove_item (grocery_list, item)
+  grocery_list.delete(item)
+  p grocery_list
 end
 
-def update_quantity
+def update_quantity (grocery_list, item, quantity)
+  grocery_list[item] = quantity
+  p grocery_list
 end
 
-def print_list
+def print_list (grocery_list)
+  grocery_list.each do |item, quantity|
+    p "#{item}: #{quantity}"
+  end
 end
 
 create_list("banana melon ice bread")
