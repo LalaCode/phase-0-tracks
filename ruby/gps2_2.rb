@@ -65,5 +65,19 @@ def print_list (grocery_list)
   end
 end
 
-create_list("banana melon ice bread")
+list = create_list("banana melon ice bread")
+
+add_item(list, "Lemonade", 2)
+add_item(list, "Tomatoes", 3)
+add_item(list, "Onions", 1)
+add_item(list, "Ice Cream", 4)
+
+
+remove_item(list, "Lemonade")
+update_quantity(list, "Ice Cream", 1)
+
+print_list(list)
+
+
+
 
