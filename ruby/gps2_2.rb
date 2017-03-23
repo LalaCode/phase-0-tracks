@@ -32,3 +32,29 @@
 # steps:
   # format output
 # output: string
+
+
+def create_list(groceries)
+  grocery_list = {}
+  grocery_items = groceries.split(' ')
+  grocery_items.each do |item|
+    grocery_list[item] = 1
+  end
+  p grocery_list
+
+end
+
+def add_item (grocery_list, item, quantity=1)
+end
+
+def remove_item
+end
+
+def update_quantity
+end
+
+def print_list
+end
+
+create_list("banana melon ice bread")
+
