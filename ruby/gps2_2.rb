@@ -32,19 +32,19 @@
 # steps:
   # format output
 # output: string
-
+DEFAULT_QUANTITY = 1
 
 def create_list(groceries)
   grocery_list = {}
   grocery_items = groceries.split(' ')
   grocery_items.each do |item|
-    grocery_list[item] = 1
+    grocery_list[item] = DEFAULT_QUANTITY
   end
   p grocery_list
 
 end
 
-def add_item (grocery_list, item, quantity=1)
+def add_item (grocery_list, item, quantity = DEFAULT_QUANTITY)
   grocery_list[item] = quantity
   p grocery_list
 end
