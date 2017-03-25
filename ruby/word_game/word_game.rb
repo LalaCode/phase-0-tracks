@@ -16,7 +16,12 @@ DESIGN
     - create the "_ _" interface for the game using an array
     - determine the number of guesses based on word length
 
-  GUESSING METHOD
+  GUESSING METHOD:
+    - asks for user guess
+    - compare user guess to player input word
+    - if correct send message with updated interface and update guess count
+    - if wrong send message and update guess count
+    - repeat until guess count = 0
 
   GAME OVER METHOD
   
