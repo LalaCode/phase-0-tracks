@@ -30,3 +30,48 @@ DESIGN
     - if number of guesses is zero send negative message and give answer
   
 =end
+
+class Game
+  attr_accessor :word, :interface, :guesses, :right_answer
+
+  def initialize(word)
+    @word = word
+    @interface = "_ " * word.length
+    @working_interface = @interface.split
+    @guesses = word.length * 2 
+
+    puts "You have #{@guesses} attempts to guess this word: #{@interface}"
+  end
+
+  def guess 
+
+    until @guesses == 0 || (@interface.delete(" ") == @word)
+    puts "Enter your guess."
+    user_guess = gets.chomp 
+
+    if @word.include? user_guess
+      letter_placement = @word.index(user_guess)
+      @working_interface.delete_at(letter_placement)
+      @working_interface.insert(letter_placement, user_guess)
+      @interface = @working_interface.join(' ')
+      @guesses -=1
+      puts "Nice guess! #{user_guess} is part of the word!"
+      puts @interface
+    else
+      @guesses -=1
+      puts "WRONG!"
+      puts "You have #{@guesses} guesses left!"
+    end
+  end
+
+  def game_over
+    if @interface.delete(" ") == @word
+      puts "CONGRATULATIONS!!!! YOU WIN!!!"
+    else
+      puts "BOOOOOOOO!!! YOU RAN OUT OF GUESSES!!!"
+      puts "The correct answer was '#{word}'"
+    end
+  end
+end
+
+end
