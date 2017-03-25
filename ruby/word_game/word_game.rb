@@ -1,4 +1,5 @@
 =begin
+INSTRUCTIONS
   # One user can enter a word
   # another user attempts to guess the word.
   # Guesses are limited, and the number of guesses available is related to the length of the word. (need a guess counter that is set by the length of the word)
@@ -8,6 +9,7 @@
     which would become "_ _ _ c _ _ _" after the user enters a guess of "c".
   #The user should get a congratulatory message if they win, and a taunting message if they lose.
   
+_____________________________________________________
 
 DESIGN
   
