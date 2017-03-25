@@ -75,3 +75,13 @@ class Game
 end
 
 end
+
+puts ">>>Welcome to the word guessing game!<<<"  
+puts "PLAYER 1: Please type your word."
+player_word = gets.chomp 
+
+puts "PLAYER 2: You have a limited number of guesses to figure out the word.  You may guess individual letters only."
+game = Game.new(player_word)
+
+game.guess
+game.game_over
