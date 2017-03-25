@@ -1,5 +1,4 @@
 =begin
-INSTRUCTIONS
   # One user can enter a word
   # another user attempts to guess the word.
   # Guesses are limited, and the number of guesses available is related to the length of the word. (need a guess counter that is set by the length of the word)
@@ -9,58 +8,53 @@ INSTRUCTIONS
     which would become "_ _ _ c _ _ _" after the user enters a guess of "c".
   #The user should get a congratulatory message if they win, and a taunting message if they lose.
   
-_____________________________________________________
-
-DESIGN
-  
-  INITIALIZATION METHOD: 
-    - take player input word and start new initialization of the game
-    - create the "_ _" interface for the game using an array
-    - determine the number of guesses based on word length
-
-  GUESSING METHOD:
-    - asks for user guess
-    - compare user guess to player input word
-    - if correct send message with updated interface and update guess count
-    - if wrong send message and update guess count
-    - repeat until guess count = 0 or word is complete
-
-  GAME OVER METHOD:
-    - if word was guessed correctly send congratulations message
-    - if number of guesses is zero send negative message and give answer
-  
 =end
+
+#find index matches and then replace those indexes with the letter
+
 
 class Game
   attr_accessor :word, :interface, :guesses, :right_answer
 
   def initialize(word)
-    @word = word
+    @word = word.downcase!
     @interface = "_ " * word.length
     @working_interface = @interface.split
     @guesses = word.length * 2 
+    
 
     puts "You have #{@guesses} attempts to guess this word: #{@interface}"
   end
 
   def guess 
+    letter_index = []
 
     until @guesses == 0 || (@interface.delete(" ") == @word)
     puts "Enter your guess."
-    user_guess = gets.chomp 
+    user_guess = gets.chomp.downcase! 
 
-    if @word.include? user_guess
-      letter_placement = @word.index(user_guess)
-      @working_interface.delete_at(letter_placement)
-      @working_interface.insert(letter_placement, user_guess)
-      @interface = @working_interface.join(' ')
-      @guesses -=1
-      puts "Nice guess! #{user_guess} is part of the word!"
-      puts @interface
-    else
-      @guesses -=1
-      puts "WRONG!"
-      puts "You have #{@guesses} guesses left!"
+      if @word.include? user_guess
+        puts "Nice guess! #{user_guess} is part of the word!"
+        @guesses -=1
+
+        @word.split('').each do |letter|
+          if letter == user_guess
+            indexer = word.split('').each_index.select { |i| word.split('')[i]==letter}
+              indexer.each do |occurance|
+                @working_interface.delete_at(occurance)
+                @working_interface.insert(occurance, letter)
+                @interface = @working_interface.join(' ')
+              end
+           end
+        end
+        puts @interface
+        
+
+      else
+        @guesses -=1
+        puts "WRONG!"
+        puts "You have #{@guesses} guesses left!"
+      end 
     end
   end
 
@@ -74,7 +68,7 @@ class Game
   end
 end
 
-end
+
 
 puts ">>>Welcome to the word guessing game!<<<"  
 puts "PLAYER 1: Please type your word."
@@ -85,3 +79,7 @@ game = Game.new(player_word)
 
 game.guess
 game.game_over
+ 
+
+
+
