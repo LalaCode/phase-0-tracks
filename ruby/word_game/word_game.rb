@@ -1,4 +1,7 @@
+
 =begin
+INSTRUCTIONS
+
   # One user can enter a word
   # another user attempts to guess the word.
   # Guesses are limited, and the number of guesses available is related to the length of the word. (need a guess counter that is set by the length of the word)
@@ -8,16 +11,31 @@
     which would become "_ _ _ c _ _ _" after the user enters a guess of "c".
   #The user should get a congratulatory message if they win, and a taunting message if they lose.
   
+
+
+# PSUEDOCODE
+
+  Initialize method:
+    - initialize game with player 1 input word
+    - create "_ _ " output for player 2
+    - determine number of guesses based on word length
+    - print out guesses and interface for user
+
+  Guess method:
+    - 
+
+
+  Game over method:
+
 =end
 
-#find index matches and then replace those indexes with the letter
-
+# DECLARATIONS
 
 class Game
   attr_accessor :word, :interface, :guesses, :right_answer
 
   def initialize(word)
-    @word = word.downcase!
+    @word = word.downcase
     @interface = "_ " * word.length
     @working_interface = @interface.split
     @guesses = word.length * 2 
@@ -27,11 +45,10 @@ class Game
   end
 
   def guess 
-    letter_index = []
 
     until @guesses == 0 || (@interface.delete(" ") == @word)
     puts "Enter your guess."
-    user_guess = gets.chomp.downcase! 
+    user_guess = gets.chomp.downcase 
 
       if @word.include? user_guess
         puts "Nice guess! #{user_guess} is part of the word!"
@@ -69,6 +86,8 @@ class Game
 end
 
 
+
+# DRIVER CODE
 
 puts ">>>Welcome to the word guessing game!<<<"  
 puts "PLAYER 1: Please type your word."
