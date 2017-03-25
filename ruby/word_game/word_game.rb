@@ -13,7 +13,7 @@ INSTRUCTIONS
   
 
 
-# PSUEDOCODE
+PSUEDOCODE
 
   Initialize method:
     - initialize game with player 1 input word
@@ -22,10 +22,15 @@ INSTRUCTIONS
     - print out guesses and interface for user
 
   Guess method:
-    - 
+    - update guess count
+    - take player two guess and compare it to letters in player 1 word
+    - if letter matches then should be printed out with positive matches
+    - if no matches print negative message and guesses remaining
 
 
   Game over method:
+    - if word guess correctly print positive message
+    - if guesses = 0 print negative message and the answer
 
 =end
 
