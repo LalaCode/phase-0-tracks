@@ -21,8 +21,10 @@ DESIGN
     - compare user guess to player input word
     - if correct send message with updated interface and update guess count
     - if wrong send message and update guess count
-    - repeat until guess count = 0
+    - repeat until guess count = 0 or word is complete
 
-  GAME OVER METHOD
+  GAME OVER METHOD:
+    - if word was guessed correctly send congratulations message
+    - if number of guesses is zero send negative message and give answer
   
 =end
