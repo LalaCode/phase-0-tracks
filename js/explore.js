@@ -23,6 +23,11 @@ function reverse(word){
 
 };
 
-reverse("hello")
+//reverse(string)
+
+if (sunny == true){
+  reverse(string);
+};
+
 
 
