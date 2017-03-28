@@ -1,6 +1,6 @@
 //PSUEDOCODE:
 
-//Initiate an empty string that will hold the reversed string
+//Initiate an empty string that will hold the new, reversed string
 //Take string as argument in function
 //Iterate over each letter starting with the last letter
   //identify letter by the position the string
@@ -10,7 +10,6 @@
   
 //print variable based on meeting a condition
 
-var string = "hello"
 var newString = "";
 var sunny = true
 
@@ -26,7 +25,7 @@ function reverse(word){
 //reverse(string)
 
 if (sunny == true){
-  reverse(string);
+  reverse("hello");
 };
 
 
