@@ -40,3 +40,8 @@ secondCar.honk();
 var thirdCar = new Car("Honda", "Accord", 2017, false);
 console.log(thirdCar);
 thirdCar.honk();
+
+//Literal Constructor
+
+var car = {make: "Trabant", model: "OstKruez" , year: 1975, used: true};
+console.log(car);
