@@ -3,6 +3,9 @@
 //print the one with longest length
 
 var word_array = ["banana", "elementary", "disco", "unnatural", "uberhauptnicht"];
+//var word_array = ["long phrase","longest phrase","longer phrase"];
+//var word_array = ["Lebensabschnittpartner", "Rechtsschutzversicherungsgesellschaften", "Unabhaengigkeitserklaerungen", "Donaudampfschiffahrtsgesellschaftskapitän", "uberhauptnicht"];
+
 var longest_word_count = 0;
 var longest_word = "null";
 
@@ -14,20 +17,8 @@ var wordSelector = function(){
     }
 
   }
-  console.log(longest_word);
+  console.log("The longest word is:  " + longest_word);
 }
 
-  
+  wordSelector()
 
-
-
-
-wordSelector()
-
-
-//if (word_array[i].length > longest_word) {
-//      longest_word = word_array[i];
-//    }
-//  }
-  
-//};
