@@ -32,3 +32,11 @@ function Car (make, model, year, used) {
 var firstCar = new Car("Toyota", "Camry", 1994, true);
 console.log(firstCar);
 firstCar.honk();
+
+var secondCar = new Car("BMW", "X5", 2001, true);
+console.log(secondCar);
+secondCar.honk();
+
+var thirdCar = new Car("Honda", "Accord", 2017, false);
+console.log(thirdCar);
+thirdCar.honk();
