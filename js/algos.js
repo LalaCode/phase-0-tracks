@@ -3,16 +3,31 @@
 //print the one with longest length
 
 var word_array = ["banana", "elementary", "disco", "unnatural", "uberhauptnicht"];
-var longest_word = null;
+var longest_word_count = 0;
+var longest_word = "null";
 
-function Word_Selector(word_array){
-  for (var i=0, i<word_array.length, i++) {
+var wordSelector = function(){
+  for (var i=0; i < word_array.length; i++) {
+    if (word_array[i].length > longest_word_count) {
+      longest_word_count = word_array[i].length;
+      longest_word = word_array[i];
+    }
 
-    if (word_array[i].length > longest_word) {
-      
-    };
+  }
+  console.log(longest_word);
+}
 
-  };
+  
 
-} 
 
+
+
+wordSelector()
+
+
+//if (word_array[i].length > longest_word) {
+//      longest_word = word_array[i];
+//    }
+//  }
+  
+//};
