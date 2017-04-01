@@ -4,8 +4,11 @@
 # We spent [#] hours on this challenge.
 
 # EXPLANATION OF require_relative
-#
-#
+# reqiure_relative references and makes available the data in the indicated file
+# require_relative differs from relative in that the relative keyword requires the full path of the linked document whereas
+  # require_relative refers to a document within the same directory and therefore does not require the full path.
+# both require_relative and require both locate the referenced document allowing access to the data in the code.  
+
 require_relative 'state_data'
 
 class VirusPredictor
