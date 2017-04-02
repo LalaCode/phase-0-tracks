@@ -1,7 +1,9 @@
 
 
-//LONGEST WORD
-
+//WORDSELECTOR FUNCTION
+//takes an array of words
+//iterates through each words measuring and comparing the length to the empty longest word variable
+//store the longest word in the empty variable and continue comparing until all have been compared
 
 function wordSelector (wordArray){
   var longestWord = "";
@@ -19,9 +21,9 @@ function wordSelector (wordArray){
 
 
 
-//RANDOM TEST DATA FUNCTION
-
-
+//RANDOMIZER FUNCTION
+//generates a random number which is used as the index indicator for the alphabet string
+//creates a random word between 1-10 letters using the random alphabet indexes
 
 function randomizer(){
   var letters = "abcdefghijklmnopqrstuvwxyz";
@@ -35,6 +37,8 @@ function randomizer(){
     };
 
 
+//ADDRANDOMWORD FUNCTION
+//pushes a specified number of random words into an empty array
 
 function addRandomWord(times){
     var wordArray = [];
@@ -47,48 +51,34 @@ function addRandomWord(times){
 
 
 
-for (var i=0; i<10; i++){
-  var wordInput = addRandomWord(3);
-  console.log("The words are: " + wordInput);
-  console.log("The longest word is:  " + wordSelector(wordInput));
-
-};
 
 
+//OBJECT CONSTRUCTOR FUNCTION
+//constructor function to build out various instances of the Dog class
 
+function Dog(name, age){
+this.name = name;
+this.age = age;
+}
 
-
-
-//KEY-VALUE MATCH SET UP
-// function Dog(name, age){
-// this.name = name;
-// this.age = age;
-// }
-
-// var dog1 = new Dog ("Fred", 10);
-// var dog2 = new Dog ("Rio", 2);
-// var dog3 = new Dog ("Ares", 2);
-
-// // console.log(dog1)
-// // console.log(dog2)
-// // console.log(dog3)
-
-
-
+var dog1 = new Dog ("Fred", 10);
+var dog2 = new Dog ("Rio", 2);
+var dog3 = new Dog ("Ares", 2);
 
 
 //KEY-VALUE MATCH FUNCTION
-// var ageMatch = null
+//checks if the age value of two objects matches and prints true or false depending on result
 
-// function match(subjectA, subjectB){
-// if (subjectA.age == subjectB.age){
-//   ageMatch = true;
-//   console.log(ageMatch)
-//   } else {
-//     ageMatch = false
-//     console.log(ageMatch)
-//   };
-//   }
+function match(subjectA, subjectB){
+  var ageMatch = null
+  if (subjectA.age == subjectB.age){
+    ageMatch = true;
+    console.log(ageMatch)
+    } else {
+      ageMatch = false
+      console.log(ageMatch)
+    };
+  }
 
 
 
@@ -98,8 +88,8 @@ for (var i=0; i<10; i++){
 
 //KEY VALUE MATCH DRIVER CODE
 
-// match(dog2,dog3);
-// match(dog1,dog3);
+match(dog2,dog3);
+match(dog1,dog3);
 
 //LONGEST WORD DRIVER CODE
 
@@ -109,4 +99,13 @@ for (var i=0; i<10; i++){
 // console.log(randomizer());
 
 //console.log(addRandomWord(3));
+
+//RANDOM TEST DATA DRIVER CODE
+
+for (var i=0; i<10; i++){
+  var wordInput = addRandomWord(3);
+  console.log("The words are: " + wordInput);
+  console.log("The longest word is:  " + wordSelector(wordInput));
+
+};
 
