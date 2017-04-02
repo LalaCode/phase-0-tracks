@@ -95,3 +95,21 @@ end
 
 #=======================================================================
 # Reflection Section
+
+# 1. One uses a string as the key with the hash rocket to connect it to its value.  
+# The other hash, which is the value, uses the a symbol as the key. 
+
+# 2. reqiure_relative references and makes available the data in the indicated file. 
+# It is different from relative in that the relative keyword requires the full path of the linked document whereas
+# require_relative refers to a document within the same directory and therefore does not require the full path.
+# both require_relative and require both locate the referenced document allowing access to the data in the code.  
+
+# 3. In the case of this gps, you could have iterated through the state data constant the way that was originally
+# in the driver code (ex: HASHNAME[firstkey][:secondkey]) or the way we did in our feature.
+
+# 4. What stood out was that there were local variables as arguments for the method but then the method
+# used instance variables so that means the local variables were unnecessary in the code. 
+
+# 5. This exercise really helped me to better understand the use of instance and local variables.  I myself
+# have used local variables in my code but then ultimately used instance variables in the code.  It was great to see this
+# so that I can now understand how the local variable would be unessary in this case. 
