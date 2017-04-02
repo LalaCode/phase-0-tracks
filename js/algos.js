@@ -1,8 +1,6 @@
-//iterate through the array to test the length of each one 
-//compare length to variable length, update if next word is longer
-//print the one with longest length
 
 
+//LONGEST WORD
 var longest_word_count = 0;
 var longest_word = "null";
 
@@ -17,7 +15,24 @@ var wordSelector = function(word_array){
   console.log("The longest word is:  " + longest_word);
 }
 
+//KEY-VALUE MATCH
+function Dog(name, age){
+this.name = name;
+this.age = age;
+}
+
+var dog1 = new Dog ("Fred", 10);
+var dog2 = new Dog ("Rio", 2);
+var dog3 = new Dog ("Ares", 2);
+
+console.log(dog1)
+console.log(dog2)
+console.log(dog3)
+//iterate through the hashes to see if there is a match
+
+
+
   //wordSelector(["banana", "elementary", "disco", "unnatural", "uberhauptnicht"]);
   //wordSelector(["long phrase","longest phrase","longer phrase"]);
-  wordSelector(["Lebensabschnittpartner", "Rechtsschutzversicherungsgesellschaften", "Unabhaengigkeitserklaerungen", "Donaudampfschiffahrtsgesellschaftskapitän", "uberhauptnicht"]);
+  //wordSelector(["Lebensabschnittpartner", "Rechtsschutzversicherungsgesellschaften", "Unabhaengigkeitserklaerungen", "Donaudampfschiffahrtsgesellschaftskapitän", "uberhauptnicht"]);
 
