@@ -4,26 +4,32 @@
 # We spent [#] hours on this challenge.
 
 # EXPLANATION OF require_relative
-#
-#
+# reqiure_relative references and makes available the data in the indicated file
+# require_relative differs from relative in that the relative keyword requires the full path of the linked document whereas
+  # require_relative refers to a document within the same directory and therefore does not require the full path.
+# both require_relative and require both locate the referenced document allowing access to the data in the code.  
+
 require_relative 'state_data'
 
 class VirusPredictor
 
+  # initializes an instance of this class and brings in three arguments from state data  
+  # gives the arguments values as instance variables
   def initialize(state_of_origin, population_density, population)
     @state = state_of_origin
     @population = population
     @population_density = population_density
   end
 
+  # calls predicted_deaths and speed_of_spread methods
   def virus_effects
-    predicted_deaths(@population_density, @population, @state)
-    speed_of_spread(@population_density, @state)
+    predicted_deaths
+    speed_of_spread
   end
 
   private
-
-  def predicted_deaths(population_density, population, state)
+  # determines the numbers of deaths based on population density and prints out string with information
+  def predicted_deaths
     # predicted deaths is solely based on population density
     if @population_density >= 200
       number_of_deaths = (@population * 0.4).floor
@@ -41,7 +47,8 @@ class VirusPredictor
 
   end
 
-  def speed_of_spread(population_density, state) #in months
+  #determines speed of spread based on population density and print out string with the information
+  def speed_of_spread #in months
     # We are still perfecting our formula here. The speed is also affected
     # by additional factors we haven't added into this functionality.
     speed = 0.0
@@ -70,18 +77,39 @@ end
  # initialize VirusPredictor for each state
 
 
-alabama = VirusPredictor.new("Alabama", STATE_DATA["Alabama"][:population_density], STATE_DATA["Alabama"][:population])
-alabama.virus_effects
+# alabama = VirusPredictor.new("Alabama", STATE_DATA["Alabama"][:population_density], STATE_DATA["Alabama"][:population])
+# alabama.virus_effects
 
-jersey = VirusPredictor.new("New Jersey", STATE_DATA["New Jersey"][:population_density], STATE_DATA["New Jersey"][:population])
-jersey.virus_effects
+# jersey = VirusPredictor.new("New Jersey", STATE_DATA["New Jersey"][:population_density], STATE_DATA["New Jersey"][:population])
+# jersey.virus_effects
 
-california = VirusPredictor.new("California", STATE_DATA["California"][:population_density], STATE_DATA["California"][:population])
-california.virus_effects
+# california = VirusPredictor.new("California", STATE_DATA["California"][:population_density], STATE_DATA["California"][:population])
+# california.virus_effects
 
-alaska = VirusPredictor.new("Alaska", STATE_DATA["Alaska"][:population_density], STATE_DATA["Alaska"][:population])
-alaska.virus_effects
+# alaska = VirusPredictor.new("Alaska", STATE_DATA["Alaska"][:population_density], STATE_DATA["Alaska"][:population])
+# alaska.virus_effects
 
+STATE_DATA.each do |state_of_origin, state_info|
+  VirusPredictor.new(state_of_origin, state_info[:population_density], state_info[:population]).virus_effects
+end
 
 #=======================================================================
 # Reflection Section
+
+# 1. One uses a string as the key with the hash rocket to connect it to its value.  
+# The other hash, which is the value, uses the a symbol as the key. 
+
+# 2. reqiure_relative references and makes available the data in the indicated file. 
+# It is different from relative in that the relative keyword requires the full path of the linked document whereas
+# require_relative refers to a document within the same directory and therefore does not require the full path.
+# both require_relative and require both locate the referenced document allowing access to the data in the code.  
+
+# 3. In the case of this gps, you could have iterated through the state data constant the way that was originally
+# in the driver code (ex: HASHNAME[firstkey][:secondkey]) or the way we did in our feature.
+
+# 4. What stood out was that there were local variables as arguments for the method but then the method
+# used instance variables so that means the local variables were unnecessary in the code. 
+
+# 5. This exercise really helped me to better understand the use of instance and local variables.  I myself
+# have used local variables in my code but then ultimately used instance variables in the code.  It was great to see this
+# so that I can now understand how the local variable would be unessary in this case. 

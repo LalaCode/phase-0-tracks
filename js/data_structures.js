@@ -1,36 +1,47 @@
-var horse_colors = ["brown", "black", "white", "blue"];
-var horse_names = ["Piper", "Judy", "Birke", "Fred"];
+//Horse arrays and objects
 
+var horseColors = ["Black", "White", "Brown", "Orange"];
 
-horse_colors.push("orange");
-horse_names.push("Lovey");
+var horseNames = ["Fred", "Jenny", "Bob", "Seabiscuit"];
 
-var horse_info = {}
+horseColors.push("Grey");
+horseNames.push("Mr. Ed");
 
-for (var i=0; i < horse_names.length; i++ ) {horse_info[horse_names[i]] = horse_colors[i]};
+console.log(horseColors);
+console.log(horseNames);
 
-console.log(horse_info)
+horses = {};
 
-//car constructor function
-
-function Car(make,model,transmission){
-
-  this.make = make;
-  this.model = model;
-  this.transmission = transmission;
-  this.engine_rev = function() { console.log("Vroom vroom vroom!"); };
-  
+for (var i = 0; i < horseNames.length; i++) {
+  horses[horseNames[i]] = horseColors[i];
 }
 
-var firstCar = new Car("BMW", "X5", "automatic");
+console.log(horses);
+
+//Car Constructor
+
+function Car (make, model, year, used) {
+  this.make = make;
+  this.model = model;
+  this.year = year;
+  this.used = used;
+  this.honk = function(){console.log("HONK! HONK!");};
+
+}
+
+var firstCar = new Car("Toyota", "Camry", 1994, true);
 console.log(firstCar);
-firstCar.engine_rev();
+firstCar.honk();
 
-var secondCar = new Car("Mercedes", "G Wagon", "automatic");
+var secondCar = new Car("BMW", "X5", 2001, true);
 console.log(secondCar);
-secondCar.engine_rev();
+secondCar.honk();
 
-//literal constructor for car
+var thirdCar = new Car("Honda", "Accord", 2017, false);
+console.log(thirdCar);
+thirdCar.honk();
 
-var car = {make: 'Audi', model: 'TT', transmission: 'manual'}
-console.log(car)
+//Literal Constructor
+
+var car = {make: "Trabant", model: "OstKruez" , year: 1975, used: true};
+console.log(car);
