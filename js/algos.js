@@ -1,42 +1,59 @@
 
 
 //LONGEST WORD
-// var longest_word_count = 0;
-// var longest_word = "null";
 
-// var wordSelector = function(word_array){
-//   for (var i=0; i < word_array.length; i++) {
-//     if (word_array[i].length > longest_word_count) {
-//       longest_word_count = word_array[i].length;
-//       longest_word = word_array[i];
-//     }
 
-//   }
-//   console.log("The longest word is:  " + longest_word);
-// }
+function wordSelector (wordArray){
+  var longestWord = "";
+  for (var i=0; i < wordArray.length; i++) {
+    if (wordArray[i].length > longestWord.length) {
+      longestWord = wordArray[i];
+    };
+
+  };
+  //console.log("The longest word is:  " + longestWord);
+  return longestWord;
+  
+}
+
+
 
 
 //RANDOM TEST DATA FUNCTION
 
-var wordArray = [];
-var letters = "abcdefghijklmnopqrstuvwxyz";
-var newWord = "";
-var randomNumber = Math.floor((Math.random() * 10) + 1);
 
 
-function randomizer(times){
-  for (x=0; x < times; x++){
+function randomizer(){
+  var letters = "abcdefghijklmnopqrstuvwxyz";
+  var newWord = "";
+  var randomNumber = Math.floor((Math.random() * 10) + 1);
 
-    for (i=0; i < randomNumber; i++){
+    for (var i=0; i < randomNumber; i++){
       newWord += letters.charAt(Math.floor(Math.random() * letters.length));
-      };
-      wordArray.push(newWord)
-  };
-  return wordArray;
-}
+        };
+      return newWord;
+    };
 
-randomizer(3);
-console.log(wordArray)
+
+
+function addRandomWord(times){
+    var wordArray = [];
+    for (var i=0; i < times; i++){
+      wordArray.push(randomizer());
+    };
+  return wordArray;
+};
+
+
+
+
+for (var i=0; i<10; i++){
+  var wordInput = addRandomWord(3);
+  console.log("The words are: " + wordInput);
+  console.log("The longest word is:  " + wordSelector(wordInput));
+
+};
+
 
 
 
@@ -88,4 +105,8 @@ console.log(wordArray)
 
 // wordSelector(["banana", "elementary", "disco", "unnatural", "uberhauptnicht"]);
 // wordSelector(["Lebensabschnittpartner", "Rechtsschutzversicherungsgesellschaften", "Unabhaengigkeitserklaerungen", "Donaudampfschiffahrtsgesellschaftskapitän", "uberhauptnicht"]);
+
+// console.log(randomizer());
+
+//console.log(addRandomWord(3));
 
