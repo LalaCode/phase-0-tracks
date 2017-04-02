@@ -15,7 +15,12 @@ var wordSelector = function(word_array){
   console.log("The longest word is:  " + longest_word);
 }
 
-//KEY-VALUE MATCH
+
+
+
+
+
+//KEY-VALUE MATCH SET UP
 function Dog(name, age){
 this.name = name;
 this.age = age;
@@ -30,6 +35,10 @@ var dog3 = new Dog ("Ares", 2);
 // console.log(dog3)
 
 
+
+
+
+//KEY-VALUE MATCH FUNCTION
 var ageMatch = null
 
 function match(subjectA, subjectB){
@@ -42,11 +51,19 @@ if (subjectA.age == subjectB.age){
   };
   }
 
+
+
+
+
+  // _____________________DRIVER CODE_________________________
+
+//KEY VALUE MATCH DRIVER CODE
+
 match(dog2,dog3);
 match(dog1,dog3);
 
+//LONGEST WORD DRIVER CODE
 
-  //wordSelector(["banana", "elementary", "disco", "unnatural", "uberhauptnicht"]);
-  //wordSelector(["long phrase","longest phrase","longer phrase"]);
-  //wordSelector(["Lebensabschnittpartner", "Rechtsschutzversicherungsgesellschaften", "Unabhaengigkeitserklaerungen", "Donaudampfschiffahrtsgesellschaftskapitän", "uberhauptnicht"]);
+wordSelector(["banana", "elementary", "disco", "unnatural", "uberhauptnicht"]);
+wordSelector(["Lebensabschnittpartner", "Rechtsschutzversicherungsgesellschaften", "Unabhaengigkeitserklaerungen", "Donaudampfschiffahrtsgesellschaftskapitän", "uberhauptnicht"]);
 
