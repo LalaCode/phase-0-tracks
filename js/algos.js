@@ -32,6 +32,7 @@ function randomizer(times){
       };
       wordArray.push(newWord)
   };
+  return wordArray;
 }
 
 randomizer(3);
