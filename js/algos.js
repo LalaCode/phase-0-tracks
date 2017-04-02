@@ -20,7 +20,6 @@ function wordSelector (wordArray){
 
 
 
-
 //RANDOMIZER FUNCTION
 //generates a random number which is used as the index indicator for the alphabet string
 //creates a random word between 1-10 letters using the random alphabet indexes
@@ -37,6 +36,7 @@ function randomizer(){
     };
 
 
+
 //ADDRANDOMWORD FUNCTION
 //pushes a specified number of random words into an empty array
 
@@ -47,9 +47,6 @@ function addRandomWord(times){
     };
   return wordArray;
 };
-
-
-
 
 
 
@@ -64,6 +61,7 @@ this.age = age;
 var dog1 = new Dog ("Fred", 10);
 var dog2 = new Dog ("Rio", 2);
 var dog3 = new Dog ("Ares", 2);
+
 
 
 //KEY-VALUE MATCH FUNCTION
@@ -82,23 +80,12 @@ function match(subjectA, subjectB){
 
 
 
-
-
   // _____________________DRIVER CODE_________________________
 
 //KEY VALUE MATCH DRIVER CODE
 
 match(dog2,dog3);
 match(dog1,dog3);
-
-//LONGEST WORD DRIVER CODE
-
-// wordSelector(["banana", "elementary", "disco", "unnatural", "uberhauptnicht"]);
-// wordSelector(["Lebensabschnittpartner", "Rechtsschutzversicherungsgesellschaften", "Unabhaengigkeitserklaerungen", "Donaudampfschiffahrtsgesellschaftskapitän", "uberhauptnicht"]);
-
-// console.log(randomizer());
-
-//console.log(addRandomWord(3));
 
 //RANDOM TEST DATA DRIVER CODE
 
@@ -108,4 +95,16 @@ for (var i=0; i<10; i++){
   console.log("The longest word is:  " + wordSelector(wordInput));
 
 };
+
+
+//LONGEST WORD TEST DRIVER CODE
+
+// wordSelector(["banana", "elementary", "disco", "unnatural", "uberhauptnicht"]);
+// wordSelector(["Lebensabschnittpartner", "Rechtsschutzversicherungsgesellschaften", "Unabhaengigkeitserklaerungen", "Donaudampfschiffahrtsgesellschaftskapitän", "uberhauptnicht"]);
+
+// console.log(randomizer());
+
+//console.log(addRandomWord(3));
+
+
 
