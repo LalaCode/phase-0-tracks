@@ -48,4 +48,44 @@ sqlite> SELECT students.grade, students.name, teachers.name FROM students JOIN t
 
 sqlite> DELETE FROM students WHERE name="Yaddow Tellie";
 
+6.  Additional joins
+
+sqlite> SELECT students.name, students.grade, teachers.name FROM students CROSS JOIN teachers;
+
+Julie Maddow|6|Lauren Rodrigues
+Julie Maddow|6|Birke Schneider
+Julie Maddow|6|Jennifer Cefaly
+Lio Richie|6|Lauren Rodrigues
+Lio Richie|6|Birke Schneider
+Lio Richie|6|Jennifer Cefaly
+Emily Messa|5|Lauren Rodrigues
+Emily Messa|5|Birke Schneider
+Emily Messa|5|Jennifer Cefaly
+Yaya Lindly|6|Lauren Rodrigues
+Yaya Lindly|6|Birke Schneider
+Yaya Lindly|6|Jennifer Cefaly
+Zayn Arshad|5|Lauren Rodrigues
+Zayn Arshad|5|Birke Schneider
+Zayn Arshad|5|Jennifer Cefaly
+Zohra Arshad|6|Lauren Rodrigues
+Zohra Arshad|6|Birke Schneider
+Zohra Arshad|6|Jennifer Cefaly
+Jasmine Newman|5|Lauren Rodrigues
+Jasmine Newman|5|Birke Schneider
+Jasmine Newman|5|Jennifer Cefaly
+Jesse Ramos|5|Lauren Rodrigues
+Jesse Ramos|5|Birke Schneider
+Jesse Ramos|5|Jennifer Cefaly
+
+sqlite> SELECT students.name, students.aid_recipient FROM students LEFT OUTER JOIN teachers ON students.teacher_id = teachers.id;
+
+Julie Maddow|true
+Lio Richie|false
+Emily Messa|true
+Yaya Lindly|false
+Zayn Arshad|false
+Zohra Arshad|false
+Jasmine Newman|
+Jesse Ramos|false
+
 
