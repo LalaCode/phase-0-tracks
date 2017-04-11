@@ -10,6 +10,22 @@ function headingRestore(){
   event.target.style.fontStyle="initial";
 }
 
+function backgroundChanger(){
+  console.log("backgound changer");
+  event.target.style.backgroundColor="yellow";
+}
+
+function backgroundRestore(){
+  console.log("backgound restore");
+  event.target.style.backgroundColor="white";
+}
+
 var heading = document.querySelector("h1");
 heading.addEventListener("mouseover", headingChanger);
 heading.addEventListener("mouseout", headingRestore);
+
+var about = document.querySelector('div#About');
+about.addEventListener("dblclick", backgroundChanger);
+
+
+
