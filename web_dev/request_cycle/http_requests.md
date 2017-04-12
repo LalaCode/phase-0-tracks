@@ -17,3 +17,6 @@
 
 **Get vs post requests**
 The get method requests data from a specified source while the post method submits data to be processed to a specified resource. Since a get request can be cached and remains in the browser history, so it should be used with less sensitive data. Additionally, post should be used for more "destructive" or permanent actions, actions that alter the data while get should be used for operations that do not alter the data and also do not continue to store the data repeatedly. 
+
+**Cookies**
+A cookie is a piece of data from a website that is stored on a user's computer. When the user accesses a website, the site will request the cookie/data from the users computer

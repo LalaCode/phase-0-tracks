@@ -1,0 +1,2 @@
+**Linux **
+Linux is designed with a minimalist design and operation concept that assumes the user knows what they are doing and therefore is very powerful, allowing the user easy access to all parts of the system with complete control. 
