@@ -1,0 +1,91 @@
+1. Display the information in one table (either table is fine).
+
+sqlite> SELECT * FROM students;
+
+1|Julie Maddow|6|true|1
+2|Lio Richie|6|false|1
+3|Yaddow Tellie|5|false|2
+4|Emily Messa|5|true|2
+5|Yaya Lindly|6|false|1
+6|Zayn Arshad|5|false|3
+7|Zohra Arshad|6|false|2
+8|Jasmine Newman|5|true|3
+9|Jesse Ramos|5|true|3
+
+2. Update an item that meets some condition (you can choose a condition that makes sense).
+
+sqlite> UPDATE students SET aid_recipient="false" WHERE name="Jesse Ramos";
+
+3. Display the information in both tables using one query.
+
+sqlite> SELECT * FROM students, teachers WHERE students.teacher_id = teachers.id;
+
+1|Julie Maddow|6|true|1|1|Lauren Rodrigues|9|true
+2|Lio Richie|6|false|1|1|Lauren Rodrigues|9|true
+3|Yaddow Tellie|5|false|2|2|Birke Schneider|2|true
+4|Emily Messa|5|true|2|2|Birke Schneider|2|true
+5|Yaya Lindly|6|false|1|1|Lauren Rodrigues|9|true
+6|Zayn Arshad|5|false|3|3|Jennifer Cefaly|10|false
+7|Zohra Arshad|6|false|2|2|Birke Schneider|2|true
+8|Jasmine Newman|5|true|3|3|Jennifer Cefaly|10|false
+9|Jesse Ramos|5|false|3|3|Jennifer Cefaly|10|false
+
+4. Display a narrower selection of columns (fewer columns than all of them, in other words) from both tables using one query.
+
+sqlite> SELECT students.grade, students.name, teachers.name FROM students JOIN teachers ON students.teacher_id = teachers.id;
+
+6|Julie Maddow|Lauren Rodrigues
+6|Lio Richie|Lauren Rodrigues
+5|Yaddow Tellie|Birke Schneider
+5|Emily Messa|Birke Schneider
+6|Yaya Lindly|Lauren Rodrigues
+5|Zayn Arshad|Jennifer Cefaly
+6|Zohra Arshad|Birke Schneider
+5|Jasmine Newman|Jennifer Cefaly
+5|Jesse Ramos|Jennifer Cefaly
+
+5. Delete an item that meets some condition (you can choose a condition that makes sense).
+
+sqlite> DELETE FROM students WHERE name="Yaddow Tellie";
+
+6.  Additional joins
+
+sqlite> SELECT students.name, students.grade, teachers.name FROM students CROSS JOIN teachers;
+
+Julie Maddow|6|Lauren Rodrigues
+Julie Maddow|6|Birke Schneider
+Julie Maddow|6|Jennifer Cefaly
+Lio Richie|6|Lauren Rodrigues
+Lio Richie|6|Birke Schneider
+Lio Richie|6|Jennifer Cefaly
+Emily Messa|5|Lauren Rodrigues
+Emily Messa|5|Birke Schneider
+Emily Messa|5|Jennifer Cefaly
+Yaya Lindly|6|Lauren Rodrigues
+Yaya Lindly|6|Birke Schneider
+Yaya Lindly|6|Jennifer Cefaly
+Zayn Arshad|5|Lauren Rodrigues
+Zayn Arshad|5|Birke Schneider
+Zayn Arshad|5|Jennifer Cefaly
+Zohra Arshad|6|Lauren Rodrigues
+Zohra Arshad|6|Birke Schneider
+Zohra Arshad|6|Jennifer Cefaly
+Jasmine Newman|5|Lauren Rodrigues
+Jasmine Newman|5|Birke Schneider
+Jasmine Newman|5|Jennifer Cefaly
+Jesse Ramos|5|Lauren Rodrigues
+Jesse Ramos|5|Birke Schneider
+Jesse Ramos|5|Jennifer Cefaly
+
+sqlite> SELECT students.name, students.aid_recipient FROM students LEFT OUTER JOIN teachers ON students.teacher_id = teachers.id;
+
+Julie Maddow|true
+Lio Richie|false
+Emily Messa|true
+Yaya Lindly|false
+Zayn Arshad|false
+Zohra Arshad|false
+Jasmine Newman|
+Jesse Ramos|false
+
+
