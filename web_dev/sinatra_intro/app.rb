@@ -63,4 +63,11 @@ get '/great_job' do
   end
 end
 
+get '/:number_1/plus/:number_2' do
+
+  result = ((params[:number_1].to_i) + (params[:number_2].to_i)).to_s
+
+  "#{params[:number_1]} plus #{params[:number_2]} = #{result}"
+end
+
 
